@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abbas Chouhan | Luxury Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght=0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons for Luxury Hardware & Software Badges -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        luxury: {
+                            black: '#09090b',
+                            darkGray: '#121215',
+                            gold: '#D4AF37',
+                            goldHover: '#F3E5AB',
+                            goldMuted: '#A38A4E',
+                            accent: '#C5A880',
+                            cardBorder: '#27272a'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom golden selection highlight */
+        ::selection {
+            background-color: rgba(212, 175, 55, 0.2);
+            color: #D4AF37;
+        }
+        /* Smooth, lightweight ambient glowing backdrops using CSS gradients (GPU Accelerated) */
+        .ambient-glow-1 {
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, rgba(0,0,0,0) 70%);
+        }
+        .ambient-glow-2 {
+            background: radial-gradient(circle, rgba(197, 168, 128, 0.06) 0%, rgba(0,0,0,0) 70%);
+        }
+        /* Glassmorphism utility with optimized fallback for performance */
+        .glass-panel {
+            background: rgba(18, 18, 21, 0.85);
+            border: 1px solid rgba(212, 175, 55, 0.12);
+        }
+        .glass-panel-hover {
+            transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease, box-shadow 0.25s ease;
+        }
+        .glass-panel-hover:hover {
+            border-color: rgba(212, 175, 55, 0.4);
+            box-shadow: 0 12px 30px -10px rgba(212, 175, 55, 0.15);
+            transform: translateY(-4px);
+        }
+    </style>
+</head>
+<body class="bg-luxury-black text-neutral-200 font-sans antialiased selection:bg-luxury-gold/20 relative overflow-x-hidden min-h-screen">
+
+    <!-- Ambient Meshes (Static & Lightweight for maximum performance) -->
+    <div class="absolute top-0 left-0 w-full h-[800px] ambient-glow-1 pointer-events-none z-0"></div>
+    <div class="absolute bottom-1/4 right-0 w-full h-[600px] ambient-glow-2 pointer-events-none z-0"></div>
+
+    <!-- Header Navigation -->
+    <header class="fixed top-0 w-full z-50 transition-all duration-300 glass-panel border-b border-white/[0.04]">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-tr from-luxury-gold to-luxury-accent p-[1px] flex items-center justify-center transition-transform group-hover:rotate-3">
+                    <div class="w-full h-full bg-luxury-black rounded-[7px] flex items-center justify-center">
+                        <span class="text-luxury-gold font-serif font-extrabold text-lg">AC</span>
+                    </div>
+                </div>
+                <div>
+                    <span class="block font-serif tracking-widest text-white text-base font-bold uppercase transition-colors group-hover:text-luxury-gold">ABBAS CHOUHAN</span>
+                    <span class="block text-[10px] text-neutral-400 uppercase tracking-widest -mt-0.5 font-semibold">Engineered Systems</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center space-x-8 text-xs font-semibold tracking-widest uppercase">
+                <a href="#about" class="text-neutral-300 hover:text-luxury-gold transition-colors">About</a>
+                <a href="#portfolio" class="text-neutral-300 hover:text-luxury-gold transition-colors">Portfolio</a>
+                <a href="#timeline" class="text-neutral-300 hover:text-luxury-gold transition-colors">Journey</a>
+                <a href="#assistant" class="text-neutral-300 hover:text-luxury-gold transition-colors flex items-center gap-1.5">
+                    <span class="relative flex h-2 w-2">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-luxury-gold opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-luxury-gold"></span>
+                    </span>
+                    AI Assistant
+                </a>
+            </nav>
+
+            <!-- Navigation Button Actions -->
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="#contact" class="px-5 py-2.5 rounded-md text-xs font-bold tracking-widest uppercase bg-gradient-to-r from-luxury-gold to-luxury-accent text-luxury-black hover:opacity-90 transition-opacity">
+                    Inquire Desk
+                </a>
+            </div>
+
+            <!-- Mobile Menu Trigger -->
+            <button id="mobile-menu-btn" class="md:hidden text-neutral-300 hover:text-luxury-gold focus:outline-none transition-colors" aria-label="Open Navigation">
+                <i class="fa-solid fa-bars-staggered text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Nav Menu (Smooth Slide Toggle) -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-luxury-gold/10 bg-luxury-black/95 backdrop-blur-xl transition-all duration-300 py-6 px-6">
+            <nav class="flex flex-col space-y-4 text-xs font-bold tracking-widest uppercase text-center">
+                <a href="#about" class="py-2.5 text-neutral-300 hover:text-luxury-gold transition-colors border-b border-white/[0.03]">About</a>
+                <a href="#portfolio" class="py-2.5 text-neutral-300 hover:text-luxury-gold transition-colors border-b border-white/[0.03]">Portfolio</a>
+                <a href="#timeline" class="py-2.5 text-neutral-300 hover:text-luxury-gold transition-colors border-b border-white/[0.03]">Journey</a>
+                <a href="#assistant" class="py-2.5 text-neutral-300 hover:text-luxury-gold transition-colors border-b border-white/[0.03]">AI Concierge Bot</a>
+                <a href="#contact" class="py-3 mt-2 bg-gradient-to-r from-luxury-gold to-luxury-accent text-luxury-black rounded-md tracking-wider">Inquire Desk</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Grid -->
+    <main class="pt-20">
+
+        <!-- Hero Section -->
+        <section id="hero" class="relative min-h-[95vh] flex items-center justify-center px-6 py-12">
+            <div class="max-w-7xl w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Narrative Column -->
+                <div class="lg:col-span-7 space-y-8 text-left z-10">
+                    <div class="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-luxury-gold/10 border border-luxury-gold/20 text-[10px] font-bold uppercase tracking-widest text-luxury-gold">
+                        <span class="w-1.5 h-1.5 bg-luxury-gold rounded-full animate-pulse"></span>
+                        <span>Architecting Software & Physical Systems</span>
+                    </div>
+
+                    <div class="space-y-4">
+                        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-serif text-white leading-none font-medium">
+                            Synthesizing Code & <br>
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-luxury-gold via-luxury-accent to-white font-normal italic">
+                                Physical Motion
+                            </span>
+                        </h1>
+                        <p class="text-neutral-400 text-sm sm:text-base max-w-xl leading-relaxed font-light">
+                            Welcome to the digital atelier of <strong class="text-white font-semibold">Abbas Chouhan</strong>. 
+                            A Jodhpur-based B.Tech Engineer cultivating highly refined software frameworks, interactive generative AI utilities, and precise mechanical kinematics for 3D manufacturing architectures.
+                        </p>
+                    </div>
+
+                    <!-- CTA Actions -->
+                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
+                        <a href="#portfolio" class="px-8 py-4 bg-gradient-to-r from-luxury-gold to-luxury-accent text-luxury-black font-bold text-xs tracking-widest uppercase rounded-lg hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-all duration-300 flex items-center justify-center gap-2">
+                            <span>Explore Portfolio</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="#assistant" class="px-8 py-4 glass-panel text-white border border-white/10 font-bold text-xs tracking-widest uppercase rounded-lg hover:border-luxury-gold/50 transition-all duration-300 text-center flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-circle-dot text-luxury-gold animate-ping w-2 h-2 rounded-full"></i>
+                            <span>Query AI Assistant</span>
+                        </a>
+                    </div>
+
+                    <!-- Trust Stats Ribbon -->
+                    <div class="grid grid-cols-3 gap-6 pt-10 border-t border-white/[0.05] max-w-lg">
+                        <div>
+                            <span class="block text-2xl font-serif text-luxury-gold font-bold">Python</span>
+                            <span class="block text-[10px] text-neutral-500 uppercase tracking-wider mt-0.5">Automations</span>
+                        </div>
+                        <div>
+                            <span class="block text-2xl font-serif text-luxury-gold font-bold">LLM</span>
+                            <span class="block text-[10px] text-neutral-500 uppercase tracking-wider mt-0.5">Prompt Engineering</span>
+                        </div>
+                        <div>
+                            <span class="block text-2xl font-serif text-luxury-gold font-bold">3D Kin</span>
+                            <span class="block text-[10px] text-neutral-500 uppercase tracking-wider mt-0.5">NEMA Configs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Visual Module (Optimized Image frame & Diagnostics) -->
+                <div class="lg:col-span-5 relative flex flex-col items-center justify-center gap-6 z-10">
+                    <!-- Subtle Static Architectural Vector Grid -->
+                    <div class="absolute w-80 h-80 rounded-full border border-dashed border-luxury-gold/10 pointer-events-none"></div>
+
+                    <!-- Portrait Presentation Card (Zero lag, pure CSS shadows) -->
+                    <div class="relative w-full max-w-[320px] z-10">
+                        <div class="relative p-[1.5px] rounded-2xl bg-gradient-to-b from-luxury-gold/40 via-luxury-accent/15 to-transparent shadow-xl overflow-hidden group">
+                            <!-- Floating Status Tag -->
+                            <div class="absolute top-4 right-4 z-20 bg-luxury-black/90 px-3 py-1.5 rounded-full border border-luxury-gold/20 flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                                <span class="text-[9px] uppercase tracking-widest text-white font-bold">Active Developer</span>
+                            </div>
+
+                            <!-- User Portrait Image Element with fallback -->
+                            <div class="w-full h-[350px] overflow-hidden rounded-2xl bg-luxury-black relative">
+                                <img 
+                                    src="1000000311.jpg" 
+                                    alt="Abbas Chouhan" 
+                                    class="w-full h-full object-cover object-center filter contrast-105 brightness-95 transition-transform duration-500 ease-out"
+                                    onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=600';"
+                                />
+                                <div class="absolute inset-0 bg-gradient-to-t from-luxury-black/80 via-transparent to-transparent"></div>
+                            </div>
+
+                            <!-- Name Tag Anchor Overlay -->
+                            <div class="absolute bottom-4 left-4 right-4 z-20 bg-luxury-darkGray/95 p-4 rounded-xl border border-white/[0.05]">
+                                <h3 class="text-base font-serif font-bold text-white tracking-wide">Abbas Chouhan</h3>
+                                <p class="text-[10px] text-luxury-gold uppercase tracking-widest font-semibold">B.Tech Engineer &amp; Developer</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Micro telemetry card -->
+                    <div class="relative w-full max-w-[320px] z-10 glass-panel p-4 rounded-xl border border-white/[0.05] shadow-lg space-y-3">
+                        <div class="flex justify-between items-center text-[9px] text-neutral-400 uppercase font-bold tracking-widest">
+                            <span>System Diagnostics</span>
+                            <span class="text-luxury-gold flex items-center gap-1">
+                                <span class="w-1 h-1 bg-luxury-gold rounded-full animate-ping"></span>
+                                Live Session
+                            </span>
+                        </div>
+                        <div class="grid grid-cols-2 gap-3 pt-1">
+                            <div class="bg-white/[0.02] p-2 rounded border border-white/[0.02]">
+                                <span class="block text-[8px] text-neutral-500 uppercase tracking-widest">Core Engine</span>
+                                <span class="block text-xs font-semibold text-white mt-0.5">Python v3.11</span>
+                            </div>
+                            <div class="bg-white/[0.02] p-2 rounded border border-white/[0.02]">
+                                <span class="block text-[8px] text-neutral-500 uppercase tracking-widest">Additive firmware</span>
+                                <span class="block text-xs font-semibold text-white mt-0.5">Marlin Core</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Dynamic Filterable Project Portfolio Showcase -->
+        <section id="portfolio" class="py-24 px-6 border-t border-white/[0.03]">
+            <div class="max-w-7xl mx-auto space-y-12">
+                
+                <!-- Section Title -->
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+                    <div class="space-y-2">
+                        <span class="text-xs font-extrabold text-luxury-gold tracking-widest uppercase block">Selected Architectures</span>
+                        <h2 class="text-3xl md:text-5xl font-serif text-white font-medium">Core Works & Research</h2>
+                    </div>
+                    
+                    <!-- Dynamic Interactive Category Filter Tabs -->
+                    <div class="flex items-center p-1 bg-luxury-darkGray border border-white/[0.05] rounded-lg">
+                        <button onclick="filterPortfolio('all')" id="filter-btn-all" class="filter-btn px-4 py-2 rounded-md text-xs font-bold tracking-widest uppercase transition-all bg-luxury-gold text-luxury-black">
+                            All Works
+                        </button>
+                        <button onclick="filterPortfolio('software')" id="filter-btn-software" class="filter-btn px-4 py-2 rounded-md text-xs font-bold tracking-widest uppercase transition-all text-neutral-400 hover:text-white">
+                            Software
+                        </button>
+                        <button onclick="filterPortfolio('hardware')" id="filter-btn-hardware" class="filter-btn px-4 py-2 rounded-md text-xs font-bold tracking-widest uppercase transition-all text-neutral-400 hover:text-white">
+                            Hardware
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Projects Dynamic Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Card 1: Interactive Algorithmic Tools -->
+                    <div class="project-card glass-panel glass-panel-hover p-8 rounded-2xl flex flex-col justify-between h-[420px]" data-category="software">
+                        <div class="space-y-6">
+                            <div class="flex justify-between items-center">
+                                <div class="w-10 h-10 rounded-lg bg-luxury-gold/10 flex items-center justify-center text-luxury-gold">
+                                    <i class="fa-brands fa-python text-xl"></i>
+                                </div>
+                                <span class="text-[9px] uppercase tracking-widest font-extrabold text-luxury-gold px-3 py-1 rounded-full bg-luxury-gold/5 border border-luxury-gold/10">Python Logic</span>
+                            </div>
+                            <div class="space-y-3">
+                                <h3 class="text-xl font-serif font-semibold text-white">Interactive Algorithmic Orchestrators</h3>
+                                <p class="text-neutral-400 text-sm leading-relaxed font-light">
+                                    Developed standalone script hubs leveraging advanced conditional paradigms, localized operational loops, and functional structures to streamline process workflows.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="space-y-4 pt-4 border-t border-white/[0.05]">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-[10px] text-neutral-400 bg-white/5 px-2.5 py-1 rounded">Automation</span>
+                                <span class="text-[10px] text-neutral-400 bg-white/5 px-2.5 py-1 rounded">Functional Paradigm</span>
+                            </div>
+                            <button onclick="openModal('algorithmic-tools')" class="text-xs font-bold tracking-widest uppercase text-luxury-gold hover:text-luxury-goldHover flex items-center gap-1.5">
+                                <span>Inspect Systems</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: 3D Printer Kinematic Architectures -->
+                    <div class="project-card glass-panel glass-panel-hover p-8 rounded-2xl flex flex-col justify-between h-[420px]" data-category="hardware">
+                        <div class="space-y-6">
+                            <div class="flex justify-between items-center">
+                                <div class="w-10 h-10 rounded-lg bg-luxury-gold/10 flex items-center justify-center text-luxury-gold">
+                                    <i class="fa-solid fa-cubes text-xl"></i>
+                                </div>
+                                <span class="text-[9px] uppercase tracking-widest font-extrabold text-luxury-gold px-3 py-1 rounded-full bg-luxury-gold/5 border border-luxury-gold/10">3D Systems</span>
+                            </div>
+                            <div class="space-y-3">
+                                <h3 class="text-xl font-serif font-semibold text-white">Additive Manufacturing Kinematics</h3>
+                                <p class="text-neutral-400 text-sm leading-relaxed font-light">
+                                    Deep exploration into NEMA stepper drive setups, thermal curve calibrations of high-precision hotends, and optimized axis mechanics for reliable spatial printing dynamics.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="space-y-4 pt-4 border-t border-white/[0.05]">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-[10px] text-neutral-400 bg-white/5 px-2.5 py-1 rounded">NEMA Dynamics</span>
+                                <span class="text-[10px] text-neutral-400 bg-white/5 px-2.5 py-1 rounded">Thermal Physics</span>
+                            </div>
+                            <button onclick="openModal('printing-kinematics')" class="text-xs font-bold tracking-widest uppercase text-luxury-gold hover:text-luxury-goldHover flex items-center gap-1.5">
+                                <span>Inspect Systems</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Modular Custom Web Frontends -->
+                    <div class="project-card glass-panel glass-panel-hover p-8 rounded-2xl flex flex-col justify-between h-[420px]" data-category="software">
+                        <div class="space-y-6">
+                            <div class="flex justify-between items-center">
+                                <div class="w-10 h-10 rounded-lg bg-luxury-gold/10 flex items-center justify-center text-luxury-gold">
+                                    <i class="fa-solid fa-laptop-code text-xl"></i>
+                                </div>
+                                <span class="text-[9px] uppercase tracking-widest font-extrabold text-luxury-gold px-3 py-1 rounded-full bg-luxury-gold/5 border border-luxury-gold/10">Web Modules</span>
+                            </div>
+                            <div class="space-y-3">
+                                <h3 class="text-xl font-serif font-semibold text-white">Bespoke Architectural Frontends</h3>
+                                <p class="text-neutral-400 text-sm leading-relaxed font-light">
+                                    Forging standardized HTML/CSS/JS configurations into luxury modules, maximizing asset payload speed, responsive structural setups, and interactive web elements.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="space-y-4 pt-4 border-t border-white/[0.05]">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-[10px] text-neutral-400 bg-white/5 px-2.5 py-1 rounded">UI Mechanics</span>
+                                <span class="text-[10px] text-neutral-400 bg-white/5 px-2.5 py-1 rounded">Optimized Asset Delivery</span>
+                            </div>
+                            <button onclick="openModal('web-frontends')" class="text-xs font-bold tracking-widest uppercase text-luxury-gold hover:text-luxury-goldHover flex items-center gap-1.5">
+                                <span>Inspect Systems</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Media Scaling Processing Engines -->
+                    <div class="project-card glass-panel glass-panel-hover p-8 rounded-2xl flex flex-col justify-between h-[420px]" data-category="software">
+                        <div class="space-y-6">
+                            <div class="flex justify-between items-center">
+                                <div class="w-10 h-10 rounded-lg bg-luxury-gold/10 flex items-center justify-center text-luxury-gold">
+                                    <i class="fa-solid fa-sliders text-xl"></i>
+                                </div>
+                                <span class="text-[9px] uppercase tracking-widest font-extrabold text-luxury-gold px-3 py-1 rounded-full bg-luxury-gold/5 border border-luxury-gold/10">Pipelines</span>
+                            </div>
+                            <div class="space-y-3">
+                                <h3 class="text-xl font-serif font-semibold text-white">Media Asset Transformation Engines</h3>
+                                <p class="text-neutral-400 text-sm leading-relaxed font-light">
+                                    Engineered scalable back-end components for structural file organization, batch transformations, metadata injection, and rapid asset asset processing tasks.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="space-y-4 pt-4 border-t border-white/[0.05]">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-[10px] text-neutral-400 bg-white/5 px-2.5 py-1 rounded">File Pipelines</span>
+                                <span class="text-[10px] text-neutral-400 bg-white/5 px-2.5 py-1 rounded">Asset Scaling</span>
+                            </div>
+                            <button onclick="openModal('media-pipelines')" class="text-xs font-bold tracking-widest uppercase text-luxury-gold hover:text-luxury-goldHover flex items-center gap-1.5">
+                                <span>Inspect Systems</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Card 5: Mobile System & SoC Performance Analyzer -->
+                    <div class="project-card glass-panel glass-panel-hover p-8 rounded-2xl flex flex-col justify-between h-[420px]" data-category="hardware">
+                        <div class="space-y-6">
+                            <div class="flex justify-between items-center">
+                                <div class="w-10 h-10 rounded-lg bg-luxury-gold/10 flex items-center justify-center text-luxury-gold">
+                                    <i class="fa-solid fa-mobile-screen-button text-xl"></i>
+                                </div>
+                                <span class="text-[9px] uppercase tracking-widest font-extrabold text-luxury-gold px-3 py-1 rounded-full bg-luxury-gold/5 border border-luxury-gold/10">SoC Research</span>
+                            </div>
+                            <div class="space-y-3">
+                                <h3 class="text-xl font-serif font-semibold text-white">Electronics SoC Analysis Research</h3>
+                                <p class="text-neutral-400 text-sm leading-relaxed font-light">
+                                    Detailed analysis of modern mobile chip architectures, power-efficiency models, display refresh rate mechanics, and system cooling strategies.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="space-y-4 pt-4 border-t border-white/[0.05]">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-[10px] text-neutral-400 bg-white/5 px-2.5 py-1 rounded">Architecture Analysis</span>
+                                <span class="text-[10px] text-neutral-400 bg-white/5 px-2.5 py-1 rounded">Thermal Enclosures</span>
+                            </div>
+                            <button onclick="openModal('soc-analysis')" class="text-xs font-bold tracking-widest uppercase text-luxury-gold hover:text-luxury-goldHover flex items-center gap-1.5">
+                                <span>Inspect Systems</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Card 6: LLM & Generative Prompt Engineering -->
+                    <div class="project-card glass-panel glass-panel-hover p-8 rounded-2xl flex flex-col justify-between h-[420px]" data-category="software">
+                        <div class="space-y-6">
+                            <div class="flex justify-between items-center">
+                                <div class="w-10 h-10 rounded-lg bg-luxury-gold/10 flex items-center justify-center text-luxury-gold">
+                                    <i class="fa-solid fa-brain text-xl"></i>
+                                </div>
+                                <span class="text-[9px] uppercase tracking-widest font-extrabold text-luxury-gold px-3 py-1 rounded-full bg-luxury-gold/5 border border-luxury-gold/10">GenAI / LLM</span>
+                            </div>
+                            <div class="space-y-3">
+                                <h3 class="text-xl font-serif font-semibold text-white">Advanced Prompt Engineering Modules</h3>
+                                <p class="text-neutral-400 text-sm leading-relaxed font-light">
+                                    Designing tailored semantic structures and system configurations for custom LLMs to output structured data schemas and specialized workflow responses.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="space-y-4 pt-4 border-t border-white/[0.05]">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-[10px] text-neutral-400 bg-white/5 px-2.5 py-1 rounded">Google AI Studio</span>
+                                <span class="text-[10px] text-neutral-400 bg-white/5 px-2.5 py-1 rounded">System Prompting</span>
+                            </div>
+                            <button onclick="openModal('llm-prompting')" class="text-xs font-bold tracking-widest uppercase text-luxury-gold hover:text-luxury-goldHover flex items-center gap-1.5">
+                                <span>Inspect Systems</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive AI Assistant (Abbas-Bot) Workspace -->
+        <section id="assistant" class="py-24 px-6 border-t border-white/[0.03] bg-luxury-darkGray/30 relative">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Details Side -->
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-xs font-extrabold text-luxury-gold tracking-widest uppercase block font-sans">Live Interface Demonstration</span>
+                    <h2 class="text-3xl sm:text-4xl font-serif text-white font-medium">Interact with Abbas-Bot</h2>
+                    <p class="text-neutral-400 text-sm leading-relaxed font-light">
+                        Demonstrating practical application of <strong class="text-white font-semibold">Generative AI Platforms</strong> &amp; <strong class="text-white font-semibold">Advanced LLM prompting</strong> structures.
+                    </p>
+                    <p class="text-neutral-400 text-sm leading-relaxed font-light">
+                        This custom virtual assistant is equipped with integrated knowledge about Abbas Chouhan's B.Tech coursework, Python capabilities, hardware system focus, and contact pipelines.
+                    </p>
+                    
+                    <div class="space-y-3 pt-4">
+                        <span class="text-xs font-bold uppercase tracking-wider text-neutral-300 block">Suggested Prompts to click:</span>
+                        <div class="flex flex-wrap gap-2">
+                            <button onclick="askBot('Tell me about Abbas\'s B.Tech education')" class="text-xs bg-white/5 hover:bg-luxury-gold/15 text-neutral-300 hover:text-luxury-gold px-3.5 py-2 rounded-lg border border-white/10 hover:border-luxury-gold/35 transition-all">
+                                B.Tech Education
+                            </button>
+                            <button onclick="askBot('What Python tools has Abbas developed?')" class="text-xs bg-white/5 hover:bg-luxury-gold/15 text-neutral-300 hover:text-luxury-gold px-3.5 py-2 rounded-lg border border-white/10 hover:border-luxury-gold/35 transition-all">
+                                Python Automation
+                            </button>
+                            <button onclick="askBot('Explain his work on 3D printers')" class="text-xs bg-white/5 hover:bg-luxury-gold/15 text-neutral-300 hover:text-luxury-gold px-3.5 py-2 rounded-lg border border-white/10 hover:border-luxury-gold/35 transition-all">
+                                3D Printing Work
+                            </button>
+                            <button onclick="askBot('How can I contact him directly?')" class="text-xs bg-white/5 hover:bg-luxury-gold/15 text-neutral-300 hover:text-luxury-gold px-3.5 py-2 rounded-lg border border-white/10 hover:border-luxury-gold/35 transition-all">
+                                Contact Channels
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Chat Module Card -->
+                <div class="lg:col-span-7">
+                    <div class="w-full glass-panel rounded-2xl border border-white/[0.08] shadow-2xl flex flex-col h-[520px]">
+                        <!-- Bot Header -->
+                        <div class="px-6 py-4 border-b border-white/[0.05] flex items-center justify-between bg-luxury-black/40">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-luxury-gold to-luxury-accent p-[1px] flex items-center justify-center">
+                                    <div class="w-full h-full bg-luxury-black rounded-full flex items-center justify-center">
+                                        <i class="fa-solid fa-robot text-xs text-luxury-gold"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="text-xs font-bold uppercase tracking-wider text-white">Abbas-Bot</h4>
+                                    <span class="text-[9px] text-green-500 uppercase tracking-widest font-semibold block">Online &amp; Context-Ready</span>
+                                </div>
+                            </div>
+                            <span class="text-[9px] uppercase tracking-widest text-neutral-500 font-bold px-2.5 py-1 rounded bg-white/5 border border-white/[0.05]">Model: Flash-Sim</span>
+                        </div>
+
+                        <!-- Chat Messages Window (Smooth Native Scrolling) -->
+                        <div id="chat-messages" class="flex-1 p-6 overflow-y-auto space-y-4 text-sm no-scrollbar scroll-smooth">
+                            <!-- Bot initial message -->
+                            <div class="flex items-start space-x-3 max-w-[85%]">
+                                <div class="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
+                                    <i class="fa-solid fa-robot text-xs text-luxury-gold"></i>
+                                </div>
+                                <div class="bg-white/[0.03] border border-white/[0.05] p-3.5 rounded-xl text-neutral-300 text-xs sm:text-sm leading-relaxed">
+                                    Greetings, I am Abbas's digital executive assistant. Ask me anything regarding his engineering journey, technical competencies, or hardware exploration frameworks.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Chat Input Box -->
+                        <form onsubmit="handleChatSubmit(event)" class="p-4 border-t border-white/[0.05] bg-luxury-black/40 flex items-center space-x-3">
+                            <input id="chat-input" type="text" placeholder="Type a query or select a prompt..." class="flex-1 bg-luxury-black/60 border border-white/[0.08] rounded-xl px-4 py-3 text-xs sm:text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-luxury-gold transition-colors">
+                            <button type="submit" class="w-11 h-11 rounded-xl bg-gradient-to-r from-luxury-gold to-luxury-accent text-luxury-black flex items-center justify-center hover:opacity-95 transition-opacity flex-shrink-0" aria-label="Send query">
+                                <i class="fa-solid fa-paper-plane text-xs"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Dynamic Experience, Certifications & Education Timeline -->
+        <section id="timeline" class="py-24 px-6 border-t border-white/[0.03]">
+            <div class="max-w-4xl mx-auto space-y-12">
+                
+                <!-- Section Title -->
+                <div class="text-center space-y-3">
+                    <span class="text-xs font-extrabold text-luxury-gold tracking-widest uppercase block">Historical Progression</span>
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif text-white font-medium">Education &amp; Experience</h2>
+                    <p class="text-neutral-400 text-xs sm:text-sm max-w-lg mx-auto font-light">
+                        A clean, professional trajectory highlighting current academic studies, digital certifications, and specialized developer pathways.
+                    </p>
+                </div>
+
+                <!-- Modern Interactive Dual-timeline -->
+                <div class="space-y-8 relative before:absolute before:left-4 md:before:left-1/2 before:top-2 before:bottom-2 before:w-[1px] before:bg-gradient-to-b before:from-luxury-gold/50 before:via-white/5 before:to-transparent">
+                    
+                    <!-- Milestone 1 (B.Tech) -->
+                    <div class="relative grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 pl-12 md:pl-0">
+                        <div class="md:text-right md:pr-12 md:self-center">
+                            <span class="inline-block px-3 py-1 rounded bg-luxury-gold/10 border border-luxury-gold/25 text-[10px] font-bold text-luxury-gold uppercase tracking-widest mb-2">2024 - Present (Ongoing)</span>
+                            <h3 class="text-lg font-serif text-white font-semibold">Bachelor of Technology (B.Tech)</h3>
+                            <h4 class="text-xs text-luxury-accent tracking-widest uppercase font-semibold mt-0.5">Lachoo Memorial College of Science & Technology</h4>
+                        </div>
+                        <div class="hidden md:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-3.5 h-3.5 rounded-full bg-luxury-gold border-4 border-luxury-black z-10 shadow-lg shadow-luxury-gold/50"></div>
+                        <div class="glass-panel p-6 rounded-xl border border-white/[0.05]">
+                            <ul class="text-xs text-neutral-400 space-y-2 list-disc pl-4 leading-relaxed font-light">
+                                <li>Autonomous Institution affiliated with Jai Narain Vyas University (JNVU), Jodhpur.</li>
+                                <li>Coursework includes Principles of Electronics &amp; Electrical Engineering, Computational Logic, and Engineering Physics.</li>
+                                <li>Actively building systems integrating hardware automation with software paradigms.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 2 (Google Developer Profile) -->
+                    <div class="relative grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 pl-12 md:pl-0">
+                        <div class="md:col-start-2 md:pl-12 md:self-center">
+                            <span class="inline-block px-3 py-1 rounded bg-white/5 border border-white/10 text-[10px] font-bold text-neutral-300 uppercase tracking-widest mb-2">Completed Jan 2026</span>
+                            <h3 class="text-lg font-serif text-white font-semibold">Google Developer Pathways</h3>
+                            <h4 class="text-xs text-luxury-accent tracking-widest uppercase font-semibold mt-0.5">Google Developers Training Track</h4>
+                        </div>
+                        <div class="hidden md:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-3.5 h-3.5 rounded-full bg-neutral-600 border-4 border-luxury-black z-10"></div>
+                        <div class="md:col-start-1 md:row-start-1 glass-panel p-6 rounded-xl border border-white/[0.05]">
+                            <ul class="text-xs text-neutral-400 space-y-2 list-disc pl-4 leading-relaxed font-light">
+                                <li>Successfully completed specialized developer training programs focusing on computational structures.</li>
+                                <li>Demonstrated skill proficiency in structured code execution, design patterns, and modular digital setups.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 3 (Digital Services Operator) -->
+                    <div class="relative grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 pl-12 md:pl-0">
+                        <div class="md:text-right md:pr-12 md:self-center">
+                            <span class="inline-block px-3 py-1 rounded bg-white/5 border border-white/10 text-[10px] font-bold text-neutral-300 uppercase tracking-widest mb-2">May 2025</span>
+                            <h3 class="text-lg font-serif text-white font-semibold">Digital Services Operator Training</h3>
+                            <h4 class="text-xs text-luxury-accent tracking-widest uppercase font-semibold mt-0.5">DRK Infotech Private Limited</h4>
+                        </div>
+                        <div class="hidden md:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-3.5 h-3.5 rounded-full bg-neutral-600 border-4 border-luxury-black z-10"></div>
+                        <div class="glass-panel p-6 rounded-xl border border-white/[0.05]">
+                            <ul class="text-xs text-neutral-400 space-y-2 list-disc pl-4 leading-relaxed font-light">
+                                <li>Jodhpur regional professional development and training framework.</li>
+                                <li>Participated in core operational and digital architecture infrastructure sessions.</li>
+                                <li>Mapped out high-efficiency administrative service frameworks and information pathways.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 4 (Class 12 & 10 Schooling) -->
+                    <div class="relative grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 pl-12 md:pl-0">
+                        <div class="md:col-start-2 md:pl-12 md:self-center">
+                            <span class="inline-block px-3 py-1 rounded bg-white/5 border border-white/10 text-[10px] font-bold text-neutral-300 uppercase tracking-widest mb-2">Prior Academic Base</span>
+                            <h3 class="text-lg font-serif text-white font-semibold">Secondary Schooling (PCM)</h3>
+                            <h4 class="text-xs text-luxury-accent tracking-widest uppercase font-semibold mt-0.5">Board of Secondary Education, Rajasthan</h4>
+                        </div>
+                        <div class="hidden md:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-3.5 h-3.5 rounded-full bg-neutral-600 border-4 border-luxury-black z-10"></div>
+                        <div class="md:col-start-1 md:row-start-1 glass-panel p-6 rounded-xl border border-white/[0.05]">
+                            <ul class="text-xs text-neutral-400 space-y-2 list-disc pl-4 leading-relaxed font-light">
+                                <li>Class 12 (Senior Secondary): High focus on Physics, Chemistry, and Mathematics (PCM).</li>
+                                <li>Class 10 (Secondary): Solid foundation in general science, calculus, and computing fundamentals.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Skills Grid -->
+        <section id="about" class="py-24 px-6 border-t border-white/[0.03]">
+            <div class="max-w-7xl mx-auto space-y-16">
+                
+                <!-- Title and Meta -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                    <div class="lg:col-span-5 space-y-3">
+                        <span class="text-xs font-extrabold text-luxury-gold tracking-widest uppercase block font-sans">Engineering Matrix</span>
+                        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif text-white font-medium">Specialized Skills</h2>
+                    </div>
+                    <div class="lg:col-span-7 flex items-center">
+                        <p class="text-neutral-400 text-sm sm:text-base leading-relaxed font-light">
+                            Analyzing complex software-mechanical interfaces requires deep modular competence. Below is my balanced, elite technical skill profile.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Custom Skill Card Deck -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <!-- Languages -->
+                    <div class="glass-panel p-8 rounded-2xl border border-white/[0.05] space-y-6">
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-lg font-serif font-semibold text-white">Languages &amp; Web</h3>
+                            <i class="fa-solid fa-code text-luxury-gold text-lg"></i>
+                        </div>
+                        <div class="space-y-4 text-xs font-semibold uppercase tracking-widest">
+                            <div class="space-y-1">
+                                <div class="flex justify-between text-[10px] text-neutral-400">
+                                    <span>Python Automation & Scripting</span>
+                                    <span class="text-luxury-gold">90%</span>
+                                </div>
+                                <div class="h-[2px] bg-white/5 rounded-full overflow-hidden">
+                                    <div class="h-full bg-luxury-gold w-[90%]"></div>
+                                </div>
+                            </div>
+                            <div class="space-y-1">
+                                <div class="flex justify-between text-[10px] text-neutral-400">
+                                    <span>HTML & Modern Layouts</span>
+                                    <span class="text-luxury-gold">95%</span>
+                                </div>
+                                <div class="h-[2px] bg-white/5 rounded-full overflow-hidden">
+                                    <div class="h-full bg-luxury-gold w-[95%]"></div>
+                                </div>
+                            </div>
+                            <div class="space-y-1">
+                                <div class="flex justify-between text-[10px] text-neutral-400">
+                                    <span>CSS & Framework Architecture</span>
+                                    <span class="text-luxury-gold">90%</span>
+                                </div>
+                                <div class="h-[2px] bg-white/5 rounded-full overflow-hidden">
+                                    <div class="h-full bg-luxury-gold w-[90%]"></div>
+                                </div>
+                            </div>
+                            <div class="space-y-1">
+                                <div class="flex justify-between text-[10px] text-neutral-400">
+                                    <span>JavaScript Basics</span>
+                                    <span class="text-luxury-gold">75%</span>
+                                </div>
+                                <div class="h-[2px] bg-white/5 rounded-full overflow-hidden">
+                                    <div class="h-full bg-luxury-gold w-[75%]"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AI & Modern Tooling -->
+                    <div class="glass-panel p-8 rounded-2xl border border-white/[0.05] space-y-6">
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-lg font-serif font-semibold text-white">AI &amp; System Tools</h3>
+                            <i class="fa-solid fa-wand-magic-sparkles text-luxury-gold text-lg"></i>
+                        </div>
+                        <div class="space-y-4 text-xs font-semibold uppercase tracking-widest">
+                            <div class="space-y-1">
+                                <div class="flex justify-between text-[10px] text-neutral-400">
+                                    <span>Google AI Studio & API Integration</span>
+                                    <span class="text-luxury-gold">85%</span>
+                                </div>
+                                <div class="h-[2px] bg-white/5 rounded-full overflow-hidden">
+                                    <div class="h-full bg-luxury-gold w-[85%]"></div>
+                                </div>
+                            </div>
+                            <div class="space-y-1">
+                                <div class="flex justify-between text-[10px] text-neutral-400">
+                                    <span>Advanced LLM Prompt Crafting</span>
+                                    <span class="text-luxury-gold">95%</span>
+                                </div>
+                                <div class="h-[2px] bg-white/5 rounded-full overflow-hidden">
+                                    <div class="h-full bg-luxury-gold w-[95%]"></div>
+                                </div>
+                            </div>
+                            <div class="space-y-1">
+                                <div class="flex justify-between text-[10px] text-neutral-400">
+                                    <span>Generative AI Platforms</span>
+                                    <span class="text-luxury-gold">90%</span>
+                                </div>
+                                <div class="h-[2px] bg-white/5 rounded-full overflow-hidden">
+                                    <div class="h-full bg-luxury-gold w-[90%]"></div>
+                                </div>
+                            </div>
+                            <div class="space-y-1">
+                                <div class="flex justify-between text-[10px] text-neutral-400">
+                                    <span>Developer Learning Pathways</span>
+                                    <span class="text-luxury-gold">80%</span>
+                                </div>
+                                <div class="h-[2px] bg-white/5 rounded-full overflow-hidden">
+                                    <div class="h-full bg-luxury-gold w-[80%]"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hardware Systems -->
+                    <div class="glass-panel p-8 rounded-2xl border border-white/[0.05] space-y-6">
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-lg font-serif font-semibold text-white">Hardware &amp; Kinematics</h3>
+                            <i class="fa-solid fa-gears text-luxury-gold text-lg"></i>
+                        </div>
+                        <div class="space-y-4 text-xs font-semibold uppercase tracking-widest">
+                            <div class="space-y-1">
+                                <div class="flex justify-between text-[10px] text-neutral-400">
+                                    <span>3D Printing Drive Mechanics</span>
+                                    <span class="text-luxury-gold">85%</span>
+                                </div>
+                                <div class="h-[2px] bg-white/5 rounded-full overflow-hidden">
+                                    <div class="h-full bg-luxury-gold w-[85%]"></div>
+                                </div>
+                            </div>
+                            <div class="space-y-1">
+                                <div class="flex justify-between text-[10px] text-neutral-400">
+                                    <span>Firmware Logic & Calibration</span>
+                                    <span class="text-luxury-gold">80%</span>
+                                </div>
+                                <div class="h-[2px] bg-white/5 rounded-full overflow-hidden">
+                                    <div class="h-full bg-luxury-gold w-[80%]"></div>
+                                </div>
+                            </div>
+                            <div class="space-y-1">
+                                <div class="flex justify-between text-[10px] text-neutral-400">
+                                    <span>Electronics Hardware Fundamentals</span>
+                                    <span class="text-luxury-gold">80%</span>
+                                </div>
+                                <div class="h-[2px] bg-white/5 rounded-full overflow-hidden">
+                                    <div class="h-full bg-luxury-gold w-[80%]"></div>
+                                </div>
+                            </div>
+                            <div class="space-y-1">
+                                <div class="flex justify-between text-[10px] text-neutral-400">
+                                    <span>SoC Performance & Thermal Dynamics</span>
+                                    <span class="text-luxury-gold">75%</span>
+                                </div>
+                                <div class="h-[2px] bg-white/5 rounded-full overflow-hidden">
+                                    <div class="h-full bg-luxury-gold w-[75%]"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Luxury Inquire/Contact Desk -->
+        <section id="contact" class="py-24 px-6 border-t border-white/[0.03]">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Left Narrative Contact Box -->
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-xs font-extrabold text-luxury-gold tracking-widest uppercase block font-sans">Global Inquire Desk</span>
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif text-white font-medium">Initiate Contact</h2>
+                    <p class="text-neutral-400 text-sm leading-relaxed font-light">
+                        Are you looking to integrate custom automated software pipelines, deploy precise generative AI prompts, or construct robust physical kinematics for digital manufacturing?
+                    </p>
+                    <p class="text-neutral-400 text-sm leading-relaxed font-light">
+                        Send a message directly to my console. Let's engineer a solution together.
+                    </p>
+                    
+                    <div class="space-y-4 pt-6 border-t border-white/[0.05]">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-luxury-gold text-sm">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <span class="block text-[10px] uppercase text-neutral-500 tracking-wider">Direct Email</span>
+                                <a href="mailto:abbaschouhan2005@gmail.com" class="text-sm font-semibold text-white hover:text-luxury-gold transition-colors">abbaschouhan2005@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-luxury-gold text-sm">
+                                <i class="fa-solid fa-map-location-dot"></i>
+                            </div>
+                            <div>
+                                <span class="block text-[10px] uppercase text-neutral-500 tracking-wider">Base Location</span>
+                                <span class="text-sm font-semibold text-white">Jodhpur, Rajasthan, India</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Custom Polished Contact Form -->
+                <div class="lg:col-span-7">
+                    <div class="glass-panel p-8 rounded-2xl border border-white/[0.08] shadow-2xl">
+                        <form onsubmit="handleInquirySubmit(event)" class="space-y-6">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div class="space-y-2">
+                                    <label class="text-[10px] uppercase text-neutral-400 font-bold tracking-widest block">Your Name</label>
+                                    <input type="text" required placeholder="Name" class="w-full bg-luxury-black/60 border border-white/[0.08] rounded-lg px-4 py-3.5 text-xs sm:text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-luxury-gold transition-colors">
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="text-[10px] uppercase text-neutral-400 font-bold tracking-widest block">Your Email</label>
+                                    <input type="email" required placeholder="contact@example.com" class="w-full bg-luxury-black/60 border border-white/[0.08] rounded-lg px-4 py-3.5 text-xs sm:text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-luxury-gold transition-colors">
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-[10px] uppercase text-neutral-400 font-bold tracking-widest block">Subject Matter</label>
+                                <input type="text" required placeholder="Software Engineering Proposal" class="w-full bg-luxury-black/60 border border-white/[0.08] rounded-lg px-4 py-3.5 text-xs sm:text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-luxury-gold transition-colors">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-[10px] uppercase text-neutral-400 font-bold tracking-widest block">Project Specifics</label>
+                                <textarea rows="4" required placeholder="Outline your computational, web, or physical kinematic hardware requirements here..." class="w-full bg-luxury-black/60 border border-white/[0.08] rounded-lg p-4 text-xs sm:text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-luxury-gold transition-colors resize-none"></textarea>
+                            </div>
+                            <button type="submit" class="w-full py-4 bg-gradient-to-r from-luxury-gold to-luxury-accent text-luxury-black font-bold text-xs tracking-widest uppercase rounded-lg hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-all duration-300">
+                                Transmit Specification
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Luxury Minimalist Footer -->
+    <footer class="py-12 border-t border-white/[0.03] px-6 text-center text-xs text-neutral-500 font-light">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-6">
+            <span class="tracking-widest">&copy; 2026 Abbas Chouhan. All rights reserved.</span>
+            <div class="flex items-center space-x-6 uppercase tracking-widest text-[10px]">
+                <a href="#about" class="hover:text-luxury-gold transition-colors">About</a>
+                <a href="#portfolio" class="hover:text-luxury-gold transition-colors">Portfolio</a>
+                <a href="#timeline" class="hover:text-luxury-gold transition-colors">Journey</a>
+                <a href="#contact" class="hover:text-luxury-gold transition-colors">Inquire Desk</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom Project Detail Modal -->
+    <div id="project-modal" class="fixed inset-0 z-50 hidden bg-luxury-black/90 backdrop-blur-xl flex items-center justify-center p-6 transition-all duration-300">
+        <div class="glass-panel w-full max-w-2xl rounded-2xl border border-white/[0.1] shadow-2xl flex flex-col overflow-hidden max-h-[90vh]">
+            <!-- Modal Header -->
+            <div class="px-6 py-4 border-b border-white/[0.05] flex items-center justify-between bg-luxury-black/50">
+                <div class="flex items-center space-x-3">
+                    <div id="modal-icon-container" class="w-8 h-8 rounded-lg bg-luxury-gold/10 flex items-center justify-center text-luxury-gold border border-luxury-gold/20">
+                        <!-- Dynamic Icon -->
+                    </div>
+                    <div>
+                        <h3 id="modal-title" class="text-sm sm:text-base font-serif text-white font-semibold">Project Title</h3>
+                        <span id="modal-subtitle" class="text-[9px] uppercase tracking-widest text-neutral-500 font-bold block">Subset category</span>
+                    </div>
+                </div>
+                <button onclick="closeModal()" class="w-8 h-8 rounded-lg bg-white/5 hover:bg-white/10 text-neutral-400 hover:text-white flex items-center justify-center transition-colors" aria-label="Close detail modal">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <!-- Modal Content (Scrollable) -->
+            <div id="modal-content-body" class="p-6 overflow-y-auto space-y-6 text-sm no-scrollbar text-neutral-300 leading-relaxed font-light">
+                <!-- Dynamically Populated -->
+            </div>
+            <!-- Modal Footer -->
+            <div class="p-4 border-t border-white/[0.05] bg-luxury-black/50 flex justify-end space-x-3">
+                <button onclick="closeModal()" class="px-5 py-2.5 rounded-lg bg-white/5 hover:bg-white/10 text-xs font-bold tracking-widest uppercase text-neutral-300 hover:text-white transition-colors">
+                    Close Desk
+                </button>
+                <a href="#contact" onclick="closeModal()" class="px-5 py-2.5 rounded-lg bg-gradient-to-r from-luxury-gold to-luxury-accent text-luxury-black text-xs font-bold tracking-widest uppercase transition-opacity hover:opacity-90">
+                    Propose Integration
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Custom Toast -->
+    <div id="toast-notification" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 hidden bg-luxury-darkGray border border-luxury-gold/30 px-6 py-4 rounded-xl shadow-2xl flex items-center space-x-3 transition-all duration-300">
+        <i class="fa-solid fa-circle-check text-luxury-gold"></i>
+        <span id="toast-message" class="text-xs font-bold uppercase tracking-wider text-white">Specification Processed Successfully</span>
+    </div>
+
+    <!-- Interactive JavaScript Engine -->
+    <script>
+        // Track Portfolio Filter Categories (Optimized, zero layout jumps)
+        function filterPortfolio(category) {
+            const cards = document.querySelectorAll('.project-card');
+            const btns = document.querySelectorAll('.filter-btn');
+
+            // Reset active button styling instantly
+            btns.forEach(btn => {
+                btn.className = "filter-btn px-4 py-2 rounded-md text-xs font-bold tracking-widest uppercase transition-all text-neutral-400 hover:text-white";
+            });
+
+            // Set current active button styling
+            const activeBtn = document.getElementById(`filter-btn-${category}`);
+            if (activeBtn) {
+                activeBtn.className = "filter-btn px-4 py-2 rounded-md text-xs font-bold tracking-widest uppercase transition-all bg-luxury-gold text-luxury-black";
+            }
+
+            // Filter logic without delay blocking layout thread
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        }
+
+        // Toggle Mobile Menu
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close Mobile Menu on navigation select
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Custom Simulated Dynamic AI Assistant Logic (Abbas-Bot)
+        const botResponses = {
+            "education": "Abbas Chouhan is currently pursuing a Bachelor of Technology (B.Tech) at Lachoo Memorial College of Science & Technology (an autonomous institution affiliated with Jai Narain Vyas University - JNVU in Jodhpur, Rajasthan). His coursework includes Electrical and Electronics Engineering foundations, Computational Paradigms, and Engineering Physics.",
+            "python": "In software, Abbas specializes in developing optimized algorithmic programs using Python. He designs clean conditional architectures, modular logical structures, and automated scripting pipelines for handling complex transformations, media assets scaling, and metadata injection protocols.",
+            "3d": "Abbas runs dedicated mechanical research on additive manufacturing architectures (3D Printers). His current research covers NEMA stepper motor configuration profiles, kinematic movement setups, and deep thermofluid/thermal physics calibrations for extreme-precision hotend extruders.",
+            "contact": "You can establish immediate contact with Abbas via his official inquiry inbox at abbaschouhan2005@gmail.com, or directly leverage the Global Inquire Desk form located on the bottom floor of this portfolio workspace.",
+            "default": "I have logged your request. Abbas has extensive hands-on competence with generative AI prompts, Google AI Studio deployments, responsive HTML5 layout pipelines, and advanced engineering kinematics. Let me know if you would like info on his Education, Python work, 3D printers, or Contact channels."
+        };
+
+        function askBot(queryText) {
+            const chatMessages = document.getElementById('chat-messages');
+            
+            // Render user query block instantly
+            const userMsgHtml = `
+                <div class="flex items-start justify-end space-x-3 max-w-[85%] ml-auto">
+                    <div class="bg-luxury-gold/15 border border-luxury-gold/25 p-3.5 rounded-xl text-neutral-100 text-xs sm:text-sm leading-relaxed">
+                        ${queryText}
+                    </div>
+                    <div class="w-7 h-7 rounded-full bg-luxury-gold/20 flex items-center justify-center flex-shrink-0 text-[10px] text-luxury-gold font-bold">
+                        YOU
+                    </div>
+                </div>
+            `;
+            chatMessages.insertAdjacentHTML('beforeend', userMsgHtml);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+
+            // Render simulated dynamic writing placeholder
+            const typingId = "typing-" + Date.now();
+            const typingHtml = `
+                <div id="${typingId}" class="flex items-start space-x-3 max-w-[85%]">
+                    <div class="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
+                        <i class="fa-solid fa-robot text-xs text-luxury-gold"></i>
+                    </div>
+                    <div class="bg-white/[0.03] border border-white/[0.05] p-3.5 rounded-xl text-neutral-400 text-xs sm:text-sm">
+                        <span class="animate-pulse">Thinking, fetching context matrix...</span>
+                    </div>
+                </div>
+            `;
+            chatMessages.insertAdjacentHTML('beforeend', typingHtml);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+
+            // Generate relevant answer
+            let response = botResponses.default;
+            const normalizedQuery = queryText.toLowerCase();
+            if (normalizedQuery.includes('b.tech') || normalizedQuery.includes('education') || normalizedQuery.includes('college')) {
+                response = botResponses.education;
+            } else if (normalizedQuery.includes('python') || normalizedQuery.includes('software') || normalizedQuery.includes('algorithmic')) {
+                response = botResponses.python;
+            } else if (normalizedQuery.includes('3d') || normalizedQuery.includes('kinematic') || normalizedQuery.includes('printer')) {
+                response = botResponses.3d;
+            } else if (normalizedQuery.includes('contact') || normalizedQuery.includes('email') || normalizedQuery.includes('hire')) {
+                response = botResponses.contact;
+            }
+
+            // Simulated response delay (Fast & Optimized)
+            setTimeout(() => {
+                const typingNode = document.getElementById(typingId);
+                if (typingNode) typingNode.remove();
+
+                const responseHtml = `
+                    <div class="flex items-start space-x-3 max-w-[85%]">
+                        <div class="w-7 h-7 rounded-full bg-gradient-to-tr from-luxury-gold to-luxury-accent p-[1px] flex items-center justify-center flex-shrink-0">
+                            <div class="w-full h-full bg-luxury-black rounded-full flex items-center justify-center">
+                                <i class="fa-solid fa-robot text-[10px] text-luxury-gold"></i>
+                            </div>
+                        </div>
+                        <div class="bg-white/[0.03] border border-white/[0.05] p-3.5 rounded-xl text-neutral-300 text-xs sm:text-sm leading-relaxed">
+                            ${response}
+                        </div>
+                    </div>
+                `;
+                chatMessages.insertAdjacentHTML('beforeend', responseHtml);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }, 550);
+        }
+
+        function handleChatSubmit(event) {
+            event.preventDefault();
+            const inputNode = document.getElementById('chat-input');
+            const query = inputNode.value.trim();
+            if (!query) return;
+            askBot(query);
+            inputNode.value = '';
+        }
+
+        // Contact / Inquire Desk Submit Notification simulation
+        function handleInquirySubmit(event) {
+            event.preventDefault();
+            
+            // Clear standard input fields
+            event.target.reset();
+
+            // Run premium toast animation
+            const toast = document.getElementById('toast-notification');
+            toast.classList.remove('hidden');
+            setTimeout(() => {
+                toast.style.opacity = '1';
+            }, 50);
+
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                setTimeout(() => {
+                    toast.classList.add('hidden');
+                }, 300);
+            }, 3000);
+        }
+
+        // Modal Database Content
+        const modalData = {
+            "algorithmic-tools": {
+                title: "Interactive Algorithmic Orchestrators",
+                subtitle: "Python Script Architecture & Automations",
+                iconClass: "fa-brands fa-python",
+                content: `
+                    <p class="font-bold text-luxury-gold mb-2">Systems Overview:</p>
+                    <p class="mb-4">Developed multi-featured standalone algorithmic frameworks leveraging Python. Built cleanly isolated configurations containing conditional operational hierarchies, data processing tasks, and custom looping mechanics.</p>
+                    
+                    <p class="font-bold text-luxury-gold mb-2">Technical Execution:</p>
+                    <p class="mb-4">Standardized operational structures with object-oriented paradigms. Refactored high-complexity conditional layers into clean, robust processing dictionaries, lowering compute overhead and maximizing scripting versatility.</p>
+                    
+                    <p class="font-bold text-luxury-gold mb-2">Operational Use:</p>
+                    <p class="mb-0">These custom engines automate manual processes such as data mapping, string structuring, local data transformations, and rapid workspace setup routines.</p>
+                `
+            },
+            "printing-kinematics": {
+                title: "Additive Manufacturing Kinematics",
+                subtitle: "Mechanical Dynamics & Thermal Physics",
+                iconClass: "fa-solid fa-cubes",
+                content: `
+                    <p class="font-bold text-luxury-gold mb-2">Systems Overview:</p>
+                    <p class="mb-4">Deep kinematic analysis and firmware customization for precise additive manufacturing (3D printing). Researched physical mechanics and motion architectures.</p>
+                    
+                    <p class="font-bold text-luxury-gold mb-2">Technical Execution:</p>
+                    <p class="mb-4">Calibrated NEMA stepper driving profiles to establish clean acceleration and speed slopes, suppressing unwanted layer mechanics. Evaluated thermal profiles of high-output hotends to map precise material melting transitions.</p>
+                    
+                    <p class="font-bold text-luxury-gold mb-2">Operational Use:</p>
+                    <p class="mb-0">Provides a blueprint for custom fabrication of electronic enclosures, customized modular mechanical adapters, and structured prototype components directly in the Jodhpur research workspace.</p>
+                `
+            },
+            "web-frontends": {
+                title: "Bespoke Architectural Frontends",
+                subtitle: "Luxury UI Layouts & Core Optimization",
+                iconClass: "fa-solid fa-laptop-code",
+                content: `
+                    <p class="font-bold text-luxury-gold mb-2">Systems Overview:</p>
+                    <p class="mb-4">Crafted high-fidelity single-page web portfolios, application layouts, and dashboard modules using clean HTML, optimized CSS, and modern structural utilities.</p>
+                    
+                    <p class="font-bold text-luxury-gold mb-2">Technical Execution:</p>
+                    <p class="mb-4 font-normal">Created lightweight, fluid layouts with responsive breakpoints. Enforced highly organized Tailwind structures, CSS grid overlays, and fast loading parameters, ensuring visual elegance across both mobile screens and wide desktops.</p>
+                    
+                    <p class="font-bold text-luxury-gold mb-2">Operational Use:</p>
+                    <p class="mb-0">Deploys beautiful digital storefronts, portfolio workspaces, and analytics layouts featuring tactile micro-interactions and dark premium interfaces.</p>
+                `
+            },
+            "media-pipelines": {
+                title: "Media Asset Transformation Engines",
+                subtitle: "Batch Processing & Structural Pipelines",
+                iconClass: "fa-solid fa-sliders",
+                content: `
+                    <p class="font-bold text-luxury-gold mb-2">Systems Overview:</p>
+                    <p class="mb-4">Designed pipeline modules in Python for programmatic asset organization, batch scaling, and media conversion operations.</p>
+                    
+                    <p class="font-bold text-luxury-gold mb-2">Technical Execution:</p>
+                    <p class="mb-4 font-normal">Constructed standard multi-threaded file iterators, integrating custom processing rules to scale down image assets, format documents, clean directories, and prepare large media caches for deployment.</p>
+                    
+                    <p class="font-bold text-luxury-gold mb-2">Operational Use:</p>
+                    <p class="mb-0">Solves manual structural work issues by batch processing heavy files in seconds, maintaining metadata preservation with custom execution logs.</p>
+                `
+            },
+            "soc-analysis": {
+                title: "Electronics SoC Analysis Research",
+                subtitle: "Mobile Compute & Enclosure Mechanics",
+                iconClass: "fa-solid fa-mobile-screen-button",
+                content: `
+                    <p class="font-bold text-luxury-gold mb-2">Systems Overview:</p>
+                    <p class="mb-4">Technical exploration into consumer electronics architectures, specifically mobile Silicon-on-Chip (SoC) architectures, displaying mechanics, and thermal structural enclosures.</p>
+                    
+                    <p class="font-bold text-luxury-gold mb-2">Technical Execution:</p>
+                    <p class="mb-4 font-normal">Mapped mobile processor generations against thermal limits and energy footprints. Studied the interface between high-frequency digital panels and thermal dispersion methods inside modern chassis layouts.</p>
+                    
+                    <p class="font-bold text-luxury-gold mb-2">Operational Use:</p>
+                    <p class="mb-0">Acts as core research foundational framework for integrating custom electronic hardware boards with custom firmware systems.</p>
+                `
+            },
+            "llm-prompting": {
+                title: "Advanced Prompt Engineering Modules",
+                subtitle: "System Instructions & API Customization",
+                iconClass: "fa-solid fa-brain",
+                content: `
+                    <p class="font-bold text-luxury-gold mb-2">Systems Overview:</p>
+                    <p class="mb-4">Developed precise prompting layouts using Google AI Studio and generative AI sandboxes. Customized large language model context inputs to achieve structured operational responses.</p>
+                    
+                    <p class="font-bold text-luxury-gold mb-2">Technical Execution:</p>
+                    <p class="mb-4 font-normal">Engineered semantic guardrails, zero-shot/few-shot system instruction structures, and strict JSON schema generation parameters, preventing hallucination during system calls.</p>
+                    
+                    <p class="font-bold text-luxury-gold mb-2">Operational Use:</p>
+                    <p class="mb-0">Facilitates automated customer support routing, quick document synthesis, and automated structural knowledge generation, as showcased by the active Abbas-Bot below.</p>
+                `
+            }
+        };
+
+        function openModal(key) {
+            const data = modalData[key];
+            if (!data) return;
+
+            document.getElementById('modal-title').innerText = data.title;
+            document.getElementById('modal-subtitle').innerText = data.subtitle;
+            document.getElementById('modal-icon-container').innerHTML = `<i class="${data.iconClass} text-xl"></i>`;
+            document.getElementById('modal-content-body').innerHTML = data.content;
+
+            const modal = document.getElementById('project-modal');
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.style.opacity = '1';
+            }, 50);
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('project-modal');
+            modal.style.opacity = '0';
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+    </script>
+</body>
+</html>
